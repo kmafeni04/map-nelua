@@ -32,7 +32,7 @@ print(map["first_name"]) --> John
 ### map macro
 
 See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more information
-`vals` must be a lua table of type `{K:V}`
+- `vals` must be a lua table of type `{K:V}`
 
 ```lua
 ## function map(K, V, vals)
@@ -40,10 +40,10 @@ See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more info
 
 ### map_e macro
 
-Explicit variant of [map macro](#map-macro)
-HashFunc, KeyEqualFunc, Allocator must be explicitly set
-See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more information
-`vals` must be a lua table of type `{K:V}`
+Explicit variant of [map macro](#map-macro)\
+HashFunc, KeyEqualFunc, Allocator must be explicitly set\
+See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more information\
+- `vals` must be a lua table of type `{K:V}`
 
 ```lua
 ## function map_e(K, V, vals, HashFunc, KeyEqualFunc, Allocator)
