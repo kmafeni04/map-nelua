@@ -1,0 +1,51 @@
+local ssdg = require "ssdg"
+
+local gen = ssdg.new{
+  lang = "lua",
+  lead = "-",
+  single_line = "--",
+  multi_line = {
+    starting = "--[[",
+    ending = "]]"
+  }
+}
+
+local subs: hashmap(string, string)
+subs["lang"] = gen.conf.lang
+
+gen:add([=[# map-nelua
+
+Macro function to inline hashmap instantiation
+
+## Requirements
+- [nelua](https://nelua.io/)
+
+## How to install
+Copy `map.nelua` into your project and require normally or add to your [nlpm](https://github.com/kmafeni04/nlpm) package dependencies
+```:lang:
+{
+  name = "map-nelua",
+  repo = "https://github.com/kmafeni04/map-nelua",
+  version = "COMMIT-HASH-OR-TAG",
+},
+```
+
+## Quick start
+
+```:lang:
+require "map"
+local map = map!(string, string, {
+  first_name = "John",
+  last_name = "Doe"
+})
+
+print(map["first_name"]) --> John
+```
+
+## Reference
+
+]=], {subs = subs})
+
+gen:add_file("./map.nelua", { subs = subs })
+
+gen:write_file("README.md")

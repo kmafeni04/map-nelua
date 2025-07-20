@@ -1,0 +1,24 @@
+require "hashmap"
+
+--- ### map macro
+--[[-
+See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more information
+`vals` must be a lua table of type `{K:V}`
+-]]
+---`
+## function map(K, V, vals, HashFunc, KeyEqualFunc, Allocator)
+---`
+  ##[[
+    static_assert(type(K) == "table" and K.type and K.type.is_type, "`K` must be a type")
+    static_assert(type(V) == "table" and V.type and V.type.is_type, "`V` must be a type")
+    static_assert(type(vals) == "table", "`vals` must be a table")
+    for i, v in ipairs(vals) do
+      static_assert(v.is_Pair, "index %d of `vals` is not a pair: `%s`", i, v)
+    end
+  ]]
+  local _map_: hashmap(#[K]#, #[V]#, #[HashFunc]#, #[KeyEqualFunc]#, #[Allocator]#)
+  ## for _, v in ipairs(vals) do
+    _map_[#[v[1]]#] = #[v[2]]#
+  ## end
+  in _map_
+## end
