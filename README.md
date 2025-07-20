@@ -35,6 +35,17 @@ See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more info
 `vals` must be a lua table of type `{K:V}`
 
 ```lua
-## function map(K, V, vals, HashFunc, KeyEqualFunc, Allocator)
+## function map(K, V, vals)
+```
+
+### map_e macro
+
+Explicit variant of [map macro](#map-macro)
+HashFunc, KeyEqualFunc, Allocator must be explicitly set
+See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more information
+`vals` must be a lua table of type `{K:V}`
+
+```lua
+## function map_e(K, V, vals, HashFunc, KeyEqualFunc, Allocator)
 ```
 
