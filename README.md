@@ -31,7 +31,7 @@ print(map["first_name"]) --> John
 
 ### map macro
 
-See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more information
+See the nelua [hashmap-doc](https://nelua.io/libraries/#hashmap-1) for more information\
 - `vals` must be a lua table of type `{K:V}`
 
 ```lua

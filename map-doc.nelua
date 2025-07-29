@@ -1,4 +1,4 @@
-local ssdg = require "ssdg"
+local ssdg = require "ssdg.ssdg"
 
 local gen = ssdg.new{
   lang = "lua",
@@ -22,7 +22,7 @@ Macro function to inline hashmap instantiation
 
 ## How to install
 Copy `map.nelua` into your project and require normally or add to your [nlpm](https://github.com/kmafeni04/nlpm) package dependencies
-```:lang:
+```lua
 {
   name = "map-nelua",
   repo = "https://github.com/kmafeni04/map-nelua",
